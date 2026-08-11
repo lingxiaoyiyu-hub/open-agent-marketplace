@@ -1,0 +1,32 @@
+{
+  "name": "antigravity-plugin-marketplace",
+  "owner": "lingxiaoyiyu-hub",
+  "description": "Antigravity AI Agent 官方级个人与企业扩展插件市场集中库",
+  "version": "1.0.0",
+  "plugins": [
+    {
+      "name": "stepfun-plugin",
+      "displayName": "StepFun 多模态 AI 插件套件",
+      "description": "阶跃星辰 (StepFun) 语音合成 (TTS)、音色克隆、文生图、图像编辑与视频理解全套 MCP 插件",
+      "path": "./plugins/stepfun-plugin",
+      "source": "./plugins/stepfun-plugin",
+      "version": "1.0.0"
+    },
+    {
+      "name": "redteam-hardening-plugin",
+      "displayName": "红蓝 Hook 攻防对抗加固插件",
+      "description": "软件黑盒逆向、Hook 攻击还原与蓝队防破解加固协议",
+      "path": "./plugins/redteam-hardening-plugin",
+      "source": "./plugins/redteam-hardening-plugin",
+      "version": "1.0.0"
+    },
+    {
+      "name": "open-reverselab-plugin",
+      "displayName": "Open-ReverseLab 逆向工程实验室插件",
+      "description": "Agent-native 逆向工程实验室插件（包含 PE 逆向、APK 分析、CTF 答题与密码学分析）",
+      "path": "./plugins/open-reverselab-plugin",
+      "source": "./plugins/open-reverselab-plugin",
+      "version": "1.0.0"
+    }
+  ]
+}

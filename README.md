@@ -1,39 +1,125 @@
-# Antigravity Custom Plugins (自定义插件市场)
+<div align="center">
 
-这是一个整理集成的 Antigravity / AGY 个人自定义插件仓库。您可以将此仓库添加到 Antigravity IDE 的“插件市场”中，一键导入和使用所有技能与 MCP 服务。
+# 🚀 Antigravity Plugin Marketplace
 
-## 📦 包含插件列表
+**Official-grade Extension Suite & Marketplace Repository for Antigravity AI Agent**
 
-| 插件名称 | 包含技能 (Skills) | 说明 |
-| :--- | :--- | :--- |
-| **`stepfun-plugin`** | `stepfun` | 阶跃星辰 (StepFun) 多模态能力插件（语音合成 TTS、音色克隆、文生图、图像编辑、视频理解）。 |
-| **`redteam-hardening-plugin`** | `redteam-hook` | 软件黑盒逆向、Hook 攻击还原与蓝队防破解加固插件。 |
-| **`open-reverselab-plugin`** | `reverselab-apk`<br>`reverselab-ctf`<br>`reverselab-pe` | Agent-native 逆向工程实验室插件（包含 PE 逆向、APK 分析、CTF 答题与密码学分析）。 |
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Antigravity](https://img.shields.io/badge/Antigravity-2.0+-7C3AED.svg)](https://github.com/lingxiaoyiyu-hub/antigravity-plugin-marketplace)
+[![MCP Compatible](https://img.shields.io/badge/MCP-Protocol--Ready-06B6D4.svg)](https://modelcontextprotocol.io/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+
+[English Overview](#-english-overview) • [插件目录](#-插件与技能目录) • [安装指南](#-快速安装与使用) • [安全说明](#-安全与脱敏规范)
+
+</div>
 
 ---
 
-## 🚀 如何在 Antigravity 中添加此插件市场
+## 📖 简介 / Introduction
 
-1. 打开 **Antigravity IDE** 设置 / 插件界面。
-2. 点击 **“添加插件市场”** 按钮。
-3. 在弹出的输入框中填入本仓库地址：
+**Antigravity Plugin Marketplace** 是专为 **Antigravity AI Agent** 打造的高质量扩展插件市场集中库。本项目汇集了多模态 AI、网络安全与红蓝攻防加固、二进制与移动端逆向工程等领域的多款 Agent 原生扩展套件。
+
+通过本仓库，开发者与研究人员可在 Antigravity IDE 中一键订阅并动态加载自定义 **Skills（技能）**、**MCP Servers（模型上下文协议服务）** 及 **Rules（规则范式）**。
+
+---
+
+## 🏗️ 架构设计 / Architecture
+
+```mermaid
+flowchart TD
+    subgraph Antigravity IDE
+        Agent[Antigravity AI Agent]
+        MarketplaceUI["插件市场 (Plugin Market UI)"]
+    end
+
+    subgraph GitHub Marketplace Repository
+        Repo["antigravity-plugin-marketplace"]
+        Manifest["marketplace.json Index"]
+    end
+
+    subgraph Plugins Suite
+        P1["stepfun-plugin\n(StepFun Multimodal AI)"]
+        P2["redteam-hardening-plugin\n(Red/Blue Hook Hardening)"]
+        P3["open-reverselab-plugin\n(Reverse Engineering Lab)"]
+    end
+
+    MarketplaceUI -->|1. Subscribe URL| Repo
+    Repo -->|2. Discover Plugins| Manifest
+    Manifest -->|3. Auto Load| P1 & P2 & P3
+    P1 & P2 & P3 -->|4. Register Skills & MCP Tools| Agent
+```
+
+---
+
+## 📦 插件与技能目录 / Plugin Catalog
+
+| 插件标识 (Plugin ID) | 显示名称 (Display Name) | 核心技能 (Skills Exposed) | 提供能力 / MCP 工具 | 状态 |
+| :--- | :--- | :--- | :--- | :---: |
+| **`stepfun-plugin`** | 阶跃星辰多模态 AI 套件 | `stepfun` | • 长文本 TTS 语音合成<br>• Zero-Shot 音色克隆与试听<br>• 高清文生图与图像编辑<br>• 长视频理解与结构化分析 | `Active` |
+| **`redteam-hardening-plugin`** | 红蓝 Hook 攻防加固套件 | `redteam-hook` | • 软件黑盒二进制分析探针<br>• Hook 攻击 PoC 还原<br>• 蓝队反 Hook / Syscall 加固方案<br>• Bypass 对抗防护报告生成 | `Active` |
+| **`open-reverselab-plugin`** | 逆向工程实验室套件 | `reverselab-pe`<br>`reverselab-apk`<br>`reverselab-ctf` | • Windows PE / ELF 静态与动态调试<br>• Android DEX / JNI / Frida 脱壳分析<br>• CTF 竞赛与 Crackme 自动化解题<br>• 密码学算法提取与 197+ 知识库 | `Active` |
+
+---
+
+## 🚀 快速安装与使用 / Installation Guide
+
+### 方法一：通过 Antigravity IDE 插件市场添加（推荐）
+
+1. 打开 **Antigravity IDE**，进入 **设置 (Settings) -> 插件 (Plugins)** 界面。
+2. 点击 **“添加插件市场 (Add Plugin Market)”** 按钮。
+3. 在弹出的输入框中填入本仓库的 GitHub 链接：
    ```text
-   https://github.com/lingxiaoyiyu-hub/antigravity-custom-plugins
+   https://github.com/lingxiaoyiyu-hub/antigravity-plugin-marketplace
    ```
-4. 点击 **“+ 添加插件市场”** 按钮，即可自动下载并导入包含的所有自定义插件。
+4. 点击 **“+ 添加插件市场”** 确认。系统将自动解析 `marketplace.json` 索引并同步载入全部插件与技能。
+
+### 方法二：Git CLI 手动克隆至全局插件目录
+
+```bash
+# 进入全局插件目录
+cd ~/.gemini/config/plugins/
+
+# 克隆仓库
+git clone https://github.com/lingxiaoyiyu-hub/antigravity-plugin-marketplace.git custom-marketplace
+```
 
 ---
 
-## ⚠️ 配置指南
+## ⚙️ 环境变量与密钥配置 / Environment Setup
 
-### StepFun 插件 Key 配置
-`stepfun-plugin` 已进行安全脱敏处理。在运行 StepFun 语音合成或图像生成前，请在系统环境变量中设置您的 API Key：
+为了保障安全性，本仓库所有插件均已进行**脱敏处理**，代码及配置文件中无任何硬编码 API Key。使用特定插件功能前，请在系统本地配置相应的环境变量：
+
+### 1. StepFun 插件环境变量
+在调用 StepFun 语音合成、文生图或视频分析功能前设置：
 
 - **Windows PowerShell**:
   ```powershell
   $env:STEPFUN_API_KEY="your_actual_stepfun_api_key"
   ```
-- **Linux / macOS**:
+- **Linux / macOS (Bash/Zsh)**:
   ```bash
   export STEPFUN_API_KEY="your_actual_stepfun_api_key"
   ```
+
+---
+
+## 🔒 安全与脱敏规范 / Security & Privacy
+
+- **零密钥泄漏 guarantee**：本仓库推送到 GitHub 的所有配置文件（如 `mcp_config.json`）均已剔除敏感凭证。
+- **本地环境隔离**：所有密钥均仅在运行阶段从宿主机的环境变量注入，插件不收集、不上传任何私密令牌。
+- **安全审计**：详见 [SECURITY.md](SECURITY.md)。
+
+---
+
+## 🤝 贡献与反馈 / Contributing
+
+欢迎贡献新的插件、技能或改进已有工具！请阅读 [CONTRIBUTING.md](CONTRIBUTING.md) 了解代码规范与 PR 提交流程。
+
+- **提交 Issue**：报告 Bug 或提出新功能需求
+- **提交 PR**：贡献新增 Skill / MCP 插件
+
+---
+
+## 📄 开源协议 / License
+
+本项目采用 [MIT License](LICENSE) 开源协议。
