@@ -1,7 +1,6 @@
 ---
 name: reverselab-apk
-description: >-
-  open-reverselab Android APK 逆向分析技能。当用户需要分析 APK 包、DEX 解包、JNI/Native .so 逆向、Frida 脱壳、HTTP/HTTPS 抓包解密、SSL Unpinning 或分析安卓应用时激活此技能。
+description: "Android APK Reverse Engineering & Frida Hook Protocol | Android APK 逆向与 Frida 插桩技能。"
 ---
 
 # Android APK / DEX / Native Reverse Engineering Protocol (APK 逆向工作流)

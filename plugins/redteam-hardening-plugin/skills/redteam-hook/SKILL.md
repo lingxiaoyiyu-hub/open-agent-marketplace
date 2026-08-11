@@ -1,7 +1,6 @@
 ---
 name: redteam-hook
-description: >-
-  软件黑盒逆向、Hook 攻击还原与蓝队防破解加固协议。当用户提出软件破解、Hook 攻击测试、反调试、加固防御、反 Hook、二进制分析或红蓝攻防对抗需求时，自动激活此技能。
+description: "Red Team Binary Exploitation & Anti-Hook Hardening Protocol | 软件黑盒逆向、Hook 攻击还原与蓝队防破解加固协议。"
 ---
 
 # Red Team Hook Exploitation & Binary Hardening Protocol (红蓝 Hook 攻防对抗协议)

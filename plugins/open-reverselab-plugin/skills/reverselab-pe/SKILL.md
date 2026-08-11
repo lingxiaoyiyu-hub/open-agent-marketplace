@@ -1,7 +1,6 @@
 ---
 name: reverselab-pe
-description: >-
-  open-reverselab Windows PE/ELF 二进制逆向工程技能。当用户需要分析 .exe, .dll, .so, 脱壳, 反调试, Ghidra 静态分析, x64dbg 调试, Frida 插桩, 寻找 IOC 或分析可执行文件时激活此技能。
+description: "Windows PE/ELF Reverse Engineering & Binary Analysis Protocol | Windows PE/ELF 二进制逆向工程技能。"
 ---
 
 # Windows PE / Binary Reverse Engineering Protocol (PE 逆向分析工作流)

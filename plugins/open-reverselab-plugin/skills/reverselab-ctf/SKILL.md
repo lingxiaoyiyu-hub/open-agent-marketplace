@@ -1,7 +1,6 @@
 ---
 name: reverselab-ctf
-description: >-
-  open-reverselab CTF 竞赛与 Crackme 自动化分析技能。当用户提出 CTF 题目解答、Crackme 逆向、算法还原、Flag 匹配、密码学破解或 Misc 分析时激活此技能。
+description: "CTF Competition & Crackme Automated Solving Protocol | CTF 竞赛与 Crackme 自动化解题技能。"
 ---
 
 # CTF & Crackme Reverse Engineering Protocol (CTF 竞赛解题工作流)

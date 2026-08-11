@@ -1,6 +1,6 @@
 ---
 name: stepfun
-description: 阶跃星辰 (StepFun) 多模态能力插件。提供语音合成 (TTS)、音色克隆、文生图、图像编辑以及视频理解的 CLI 指令、Python SDK 及 MCP 工具使用说明。
+description: "StepFun Multimodal AI Suite (TTS, Voice Clone, Image Gen, Video) | 阶跃星辰 (StepFun) 多模态能力插件。"
 ---
 
 # 阶跃星辰 (StepFun) 插件技能指南
