@@ -1,10 +1,10 @@
-# Contributing to Antigravity Plugin Marketplace
+# Contributing to Open Agent Marketplace
 
-Thank you for considering contributing to the **Antigravity Plugin Marketplace**! We welcome custom skills, rules, hooks, and MCP servers from the community.
+Thank you for considering contributing to **Open Agent Marketplace**! We welcome custom skills, rules, hooks, and MCP servers from the community.
 
 ## 🛠️ How to Add a New Plugin
 
-1. **Fork the Repository**: Create your own fork of `lingxiaoyiyu-hub/antigravity-plugin-marketplace`.
+1. **Fork the Repository**: Create your own fork of `lingxiaoyiyu-hub/open-agent-marketplace`.
 2. **Create a Plugin Directory**: Add your plugin folder under `./plugins/<your-plugin-name>/`.
 3. **Define `plugin.json`**: Ensure your plugin directory contains a valid `plugin.json` manifest.
 4. **Update `marketplace.json`**: Register your plugin entry in the root `marketplace.json` file.

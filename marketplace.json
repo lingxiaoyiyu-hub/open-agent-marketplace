@@ -1,7 +1,7 @@
 {
-  "name": "antigravity-plugin-marketplace",
+  "name": "open-agent-marketplace",
   "owner": "lingxiaoyiyu-hub",
-  "description": "Antigravity AI Agent 官方级个人与企业扩展插件市场集中库",
+  "description": "通用 AI Agent & MCP 扩展插件市场集中库",
   "version": "1.0.0",
   "plugins": [
     {
