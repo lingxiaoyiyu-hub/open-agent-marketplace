@@ -1,28 +1,28 @@
 {
   "name": "open-reverselab-plugin",
   "owner": "LING71671 / Antigravity AI Team",
-  "description": "Agent-native 逆向工程实验室插件",
+  "description": "Agent-native Reverse Engineering Suite | Agent-native \u9006\u5411\u5de5\u7a0b\u5b9e\u9a8c\u5ba4\u63d2\u4ef6",
   "plugins": [
     {
       "name": "reverselab-pe",
-      "displayName": "PE 二进制逆向工程",
-      "description": "Windows PE/ELF 二进制逆向工程技能",
+      "displayName": "[ReverseLab PE] PE \u4e8c\u8fdb\u5236\u9006\u5411\u5de5\u7a0b",
+      "description": "Windows PE/ELF Reverse Engineering Skill | Windows PE/ELF \u4e8c\u8fdb\u5236\u9006\u5411\u5de5\u7a0b\u6280\u80fd",
       "path": "./skills/reverselab-pe",
       "source": "./skills/reverselab-pe",
       "version": "1.0.0"
     },
     {
       "name": "reverselab-apk",
-      "displayName": "Android APK 逆向分析",
-      "description": "Android APK 逆向与 Frida 插桩技能",
+      "displayName": "[ReverseLab APK] Android APK \u9006\u5411\u5206\u6790",
+      "description": "Android APK Reverse Engineering & Frida Hook Skill | Android APK \u9006\u5411\u4e0e Frida \u63d2\u6869\u6280\u80fd",
       "path": "./skills/reverselab-apk",
       "source": "./skills/reverselab-apk",
       "version": "1.0.0"
     },
     {
       "name": "reverselab-ctf",
-      "displayName": "CTF 竞赛自动化",
-      "description": "CTF 竞赛与 Crackme 自动化解题技能",
+      "displayName": "[ReverseLab CTF] CTF \u7ade\u8d5b\u81ea\u52a8\u5316",
+      "description": "CTF Competition & Crackme Auto Solver Skill | CTF \u7ade\u8d5b\u4e0e Crackme \u81ea\u52a8\u5316\u89e3\u9898\u6280\u80fd",
       "path": "./skills/reverselab-ctf",
       "source": "./skills/reverselab-ctf",
       "version": "1.0.0"

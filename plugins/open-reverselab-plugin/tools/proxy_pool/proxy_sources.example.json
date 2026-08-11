@@ -1,6 +1,6 @@
 {
   "schema": "reverselab.proxy_sources.v1",
-  "description": "代理池来源配置 — 支持免费 API、付费 API、本地文件、手动列表",
+  "description": "\u4ee3\u7406\u6c60\u6765\u6e90\u914d\u7f6e \u2014 \u652f\u6301\u514d\u8d39 API\u3001\u4ed8\u8d39 API\u3001\u672c\u5730\u6587\u4ef6\u3001\u624b\u52a8\u5217\u8868",
   "test_url": "https://httpbin.org/ip",
   "validation": {
     "timeout_sec": 8.0,
@@ -52,7 +52,7 @@
       "format": "text",
       "refresh_sec": 0,
       "enabled": true,
-      "notes": "每行一个代理: protocol://host:port 或 host:port"
+      "notes": "\u6bcf\u884c\u4e00\u4e2a\u4ee3\u7406: protocol://host:port \u6216 host:port"
     },
     {
       "id": "manual_list",
@@ -63,7 +63,7 @@
         "http://127.0.0.1:8080"
       ],
       "enabled": true,
-      "notes": "手动配置的代理列表，如 Burp Suite 上游、Clash/Shadowsocks 本地端口"
+      "notes": "\u624b\u52a8\u914d\u7f6e\u7684\u4ee3\u7406\u5217\u8868\uff0c\u5982 Burp Suite \u4e0a\u6e38\u3001Clash/Shadowsocks \u672c\u5730\u7aef\u53e3"
     }
   ]
 }

@@ -1,6 +1,6 @@
 {
   "name": "reverselab-apk",
-  "displayName": "Android APK 逆向分析",
+  "displayName": "[ReverseLab APK] Android APK \u9006\u5411\u5206\u6790",
   "version": "1.0.0",
-  "description": "Android APK 逆向与 Frida 插桩技能。"
+  "description": "Android APK Reverse Engineering & Frida Hook Skill | Android APK \u9006\u5411\u4e0e Frida \u63d2\u6869\u6280\u80fd\u3002"
 }

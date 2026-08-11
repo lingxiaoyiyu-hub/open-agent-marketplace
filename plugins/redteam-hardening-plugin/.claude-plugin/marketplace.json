@@ -1,12 +1,12 @@
 {
   "name": "redteam-hardening-plugin",
   "owner": "Antigravity AI Team",
-  "description": "黑盒逆向与 Hook 攻防对抗加固插件",
+  "description": "Binary Exploitation & Anti-Hook Hardening Plugin | \u9ed1\u76d2\u9006\u5411\u4e0e Hook \u653b\u9632\u5bf9\u6297\u52a0\u56fa\u63d2\u4ef6",
   "plugins": [
     {
       "name": "redteam-hook",
-      "displayName": "红蓝 Hook 攻防对抗加固",
-      "description": "软件黑盒逆向、Hook 攻击还原与蓝队防破解加固协议",
+      "displayName": "[RedTeam Hook] \u7ea2\u84dd Hook \u653b\u9632\u5bf9\u6297\u52a0\u56fa",
+      "description": "Red Team Binary Exploitation & Hook Hardening Protocol | \u8f6f\u4ef6\u9ed1\u76d2\u9006\u5411\u3001Hook \u653b\u51fb\u8fd8\u539f\u4e0e\u84dd\u961f\u9632\u7834\u89e3\u52a0\u56fa\u534f\u8bae",
       "path": "./skills/redteam-hook",
       "source": "./skills/redteam-hook",
       "version": "1.0.0"

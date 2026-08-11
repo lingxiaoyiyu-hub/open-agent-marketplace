@@ -29,7 +29,10 @@
         "header_set": {},
         "header_del": [],
         "body_replace": [
-          ["\"valid\":false", "\"valid\":true"]
+          [
+            "\"valid\":false",
+            "\"valid\":true"
+          ]
         ],
         "status_override": null,
         "body_override": null

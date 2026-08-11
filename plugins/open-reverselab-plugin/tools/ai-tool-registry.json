@@ -549,7 +549,7 @@
         "timeout_ms": 15000
       },
       "ai_callable": true,
-      "notes": "代理池管理: fetch, validate, rotate, stats. 为扫描工具提供代理轮换."
+      "notes": "\u4ee3\u7406\u6c60\u7ba1\u7406: fetch, validate, rotate, stats. \u4e3a\u626b\u63cf\u5de5\u5177\u63d0\u4f9b\u4ee3\u7406\u8f6e\u6362."
     },
     {
       "id": "misc.proxy_pipeline",
@@ -569,7 +569,7 @@
         "timeout_ms": 15000
       },
       "ai_callable": true,
-      "notes": "代理管道: forward/chain/route/test. 串联多级代理或路由流量到代理池."
+      "notes": "\u4ee3\u7406\u7ba1\u9053: forward/chain/route/test. \u4e32\u8054\u591a\u7ea7\u4ee3\u7406\u6216\u8def\u7531\u6d41\u91cf\u5230\u4ee3\u7406\u6c60."
     },
     {
       "id": "misc.proxy_test",
@@ -590,7 +590,7 @@
         "allow_nonzero": true
       },
       "ai_callable": true,
-      "notes": "单代理快速连通性/匿名性测试."
+      "notes": "\u5355\u4ee3\u7406\u5feb\u901f\u8fde\u901a\u6027/\u533f\u540d\u6027\u6d4b\u8bd5."
     },
     {
       "id": "misc.mitmproxy_capture",
@@ -608,7 +608,7 @@
         "allow_nonzero": true
       },
       "ai_callable": true,
-      "notes": "抓包/改包/发包: capture(抓包保存JSON), modify(代理+addon实时改包), replay(重放已抓flow), craft(构造发包). CA证书在%USERPROFILE%/.mitmproxy/."
+      "notes": "\u6293\u5305/\u6539\u5305/\u53d1\u5305: capture(\u6293\u5305\u4fdd\u5b58JSON), modify(\u4ee3\u7406+addon\u5b9e\u65f6\u6539\u5305), replay(\u91cd\u653e\u5df2\u6293flow), craft(\u6784\u9020\u53d1\u5305). CA\u8bc1\u4e66\u5728%USERPROFILE%/.mitmproxy/."
     }
   ]
 }

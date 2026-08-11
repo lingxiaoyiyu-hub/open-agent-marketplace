@@ -1,6 +1,6 @@
 {
   "name": "reverselab-pe",
-  "displayName": "PE 二进制逆向工程",
+  "displayName": "[ReverseLab PE] PE \u4e8c\u8fdb\u5236\u9006\u5411\u5de5\u7a0b",
   "version": "1.0.0",
-  "description": "Windows PE/ELF 二进制逆向工程技能。"
+  "description": "Windows PE/ELF Reverse Engineering Skill | Windows PE/ELF \u4e8c\u8fdb\u5236\u9006\u5411\u5de5\u7a0b\u6280\u80fd\u3002"
 }
