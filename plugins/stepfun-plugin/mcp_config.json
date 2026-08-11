@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "stepfun": {
+      "command": "python",
+      "args": ["-m", "stepfun.mcp_server"],
+      "env": {
+        "STEPFUN_API_KEY": "",
+        "STEPFUN_BASE_URL": "https://api.stepfun.com/step_plan/v1"
+      }
+    }
+  }
+}

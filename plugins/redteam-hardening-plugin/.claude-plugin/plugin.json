@@ -1,0 +1,5 @@
+{
+  "name": "redteam-hardening-plugin",
+  "version": "1.0.0",
+  "description": "黑盒逆向与 Hook 攻防对抗加固插件。"
+}

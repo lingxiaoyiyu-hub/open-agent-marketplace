@@ -1,0 +1,6 @@
+{
+  "name": "reverselab-apk",
+  "displayName": "Android APK 逆向分析",
+  "version": "1.0.0",
+  "description": "Android APK 逆向与 Frida 插桩技能。"
+}

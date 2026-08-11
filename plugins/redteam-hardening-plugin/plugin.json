@@ -1,0 +1,19 @@
+{
+  "name": "redteam-hardening-plugin",
+  "version": "1.0.0",
+  "description": "软件黑盒逆向、Hook 攻击还原与蓝队防破解加固插件。提供自动二进制分析探针、Hook PoC 生成、蓝队加固代码库与多轮 Bypass 对抗协议。",
+  "author": {
+    "name": "Antigravity AI Team"
+  },
+  "keywords": [
+    "redteam",
+    "blue-team",
+    "hooking",
+    "frida",
+    "reverse-engineering",
+    "binary-hardening",
+    "anti-hook",
+    "minhook",
+    "syscall"
+  ]
+}

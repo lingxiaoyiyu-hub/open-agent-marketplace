@@ -1,0 +1,31 @@
+{
+  "name": "open-reverselab-plugin",
+  "owner": "LING71671 / Antigravity AI Team",
+  "description": "Agent-native 逆向工程实验室插件",
+  "plugins": [
+    {
+      "name": "reverselab-pe",
+      "displayName": "PE 二进制逆向工程",
+      "description": "Windows PE/ELF 二进制逆向工程技能",
+      "path": "./skills/reverselab-pe",
+      "source": "./skills/reverselab-pe",
+      "version": "1.0.0"
+    },
+    {
+      "name": "reverselab-apk",
+      "displayName": "Android APK 逆向分析",
+      "description": "Android APK 逆向与 Frida 插桩技能",
+      "path": "./skills/reverselab-apk",
+      "source": "./skills/reverselab-apk",
+      "version": "1.0.0"
+    },
+    {
+      "name": "reverselab-ctf",
+      "displayName": "CTF 竞赛自动化",
+      "description": "CTF 竞赛与 Crackme 自动化解题技能",
+      "path": "./skills/reverselab-ctf",
+      "source": "./skills/reverselab-ctf",
+      "version": "1.0.0"
+    }
+  ]
+}

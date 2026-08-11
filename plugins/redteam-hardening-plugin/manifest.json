@@ -1,0 +1,7 @@
+{
+  "name": "redteam-hardening-plugin",
+  "displayName": "红蓝 Hook 攻防对抗加固插件",
+  "version": "1.0.0",
+  "description": "黑盒逆向与 Hook 攻防对抗加固插件。提供自动二进制分析探针、Hook PoC 生成、蓝队加固代码库与多轮 Bypass 对抗协议。",
+  "publisher": "Antigravity AI Team"
+}

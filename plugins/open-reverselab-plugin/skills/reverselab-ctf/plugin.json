@@ -1,0 +1,6 @@
+{
+  "name": "reverselab-ctf",
+  "displayName": "CTF 竞赛自动化",
+  "version": "1.0.0",
+  "description": "CTF 竞赛与 Crackme 自动化解题技能。"
+}

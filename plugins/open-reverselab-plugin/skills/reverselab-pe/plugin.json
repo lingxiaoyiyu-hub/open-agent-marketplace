@@ -1,0 +1,6 @@
+{
+  "name": "reverselab-pe",
+  "displayName": "PE 二进制逆向工程",
+  "version": "1.0.0",
+  "description": "Windows PE/ELF 二进制逆向工程技能。"
+}

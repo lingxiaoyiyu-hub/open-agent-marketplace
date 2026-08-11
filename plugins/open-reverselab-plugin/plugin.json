@@ -1,0 +1,18 @@
+{
+  "name": "open-reverselab-plugin",
+  "version": "1.0.0",
+  "description": "Agent-native 逆向工程实验室插件。提供 Windows PE、Android APK、CTF 竞赛与密码学/协议分析的 197+ 篇知识库、SOP 技能与自动化路由分析脚本。",
+  "author": {
+    "name": "LING71671 / Antigravity AI Team"
+  },
+  "keywords": [
+    "reverse-engineering",
+    "pe-reverse",
+    "apk-reverse",
+    "ctf",
+    "frida",
+    "ghidra",
+    "x64dbg",
+    "knowledge-base"
+  ]
+}
