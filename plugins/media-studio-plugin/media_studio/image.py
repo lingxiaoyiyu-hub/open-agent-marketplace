@@ -2,8 +2,8 @@ import os
 import base64
 import urllib.request
 from typing import Optional
-from .client import StepFunClient
-from .config import StepFunConfig
+from .client import StudioClient
+from .config import StudioConfig
 
 def save_image_result(res: dict, output_path: str) -> str:
     """
@@ -15,7 +15,7 @@ def save_image_result(res: dict, output_path: str) -> str:
         
     data_list = res.get("data", [])
     if not data_list:
-        raise RuntimeError(f"No image data returned from StepFun API. Response: {res}")
+        raise RuntimeError(f"No image data returned from Studio API. Response: {res}")
         
     first_item = data_list[0]
     
@@ -42,7 +42,7 @@ def generate_image(
     steps: int = 8,
     text_mode: bool = False,
     response_format: str = "b64_json",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> str:
     """
     Generate an image from a text prompt.
@@ -50,7 +50,7 @@ def generate_image(
     if len(prompt) > 512:
         prompt = prompt[:512]
         
-    client = StepFunClient(config)
+    client = StudioClient(config)
     
     payload = {
         "model": model,
@@ -76,7 +76,7 @@ def edit_image(
     steps: int = 8,
     text_mode: bool = False,
     response_format: str = "b64_json",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> str:
     """
     Edit an existing image using a text prompt.
@@ -87,7 +87,7 @@ def edit_image(
     if len(prompt) > 512:
         prompt = prompt[:512]
         
-    client = StepFunClient(config)
+    client = StudioClient(config)
     
     fields = {
         "model": model,

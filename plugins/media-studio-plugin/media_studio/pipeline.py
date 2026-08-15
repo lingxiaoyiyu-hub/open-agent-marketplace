@@ -20,7 +20,7 @@ def auto_subtitle(
 ) -> dict:
     """One-shot "auto caption" pipeline.
 
-    1. Transcribe the video's audio via StepFun ASR.
+    1. Transcribe the video's audio via Studio ASR.
     2. Turn the text into an SRT timed to the video duration.
     3. Burn the SRT into the video.
 

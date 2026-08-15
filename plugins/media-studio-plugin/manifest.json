@@ -1,0 +1,7 @@
+{
+  "name": "media-studio-plugin",
+  "displayName": "[Media Studio] 多模态媒体创作套件",
+  "version": "1.2.0",
+  "description": "供应商无关的多模态媒体创作套件：语音合成 (TTS)、音色克隆、语音转写 (ASR)、字幕、视频混剪/粗剪、文生图、图像编辑与视频理解全套 MCP 插件。",
+  "publisher": "Antigravity AI Team"
+}

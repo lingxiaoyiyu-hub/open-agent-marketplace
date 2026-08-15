@@ -1,4 +1,4 @@
-"""Speech-to-text (ASR) via the StepFun transcription API.
+"""Speech-to-text (ASR) via the Studio transcription API.
 
 Endpoint: ``POST {base_url}/audio/transcriptions`` (multipart/form-data).
 The response is JSON ``{"text": "..."}``. Video inputs are transparently
@@ -10,8 +10,8 @@ import os
 import tempfile
 from typing import List, Optional
 
-from .client import StepFunClient
-from .config import StepFunConfig
+from .client import StudioClient
+from .config import StudioConfig
 from .ffmpeg_ops import _exists, _has_video, extract_audio
 
 _AUDIO_MIME = {
@@ -35,7 +35,7 @@ def transcribe_audio(
     file_path: str,
     model: str = "stepaudio-2.5-asr",
     hotwords: Optional[List[str]] = None,
-    config: Optional[StepFunConfig] = None,
+    config: Optional[StudioConfig] = None,
 ) -> str:
     """Transcribe an audio or video file into text.
 
@@ -47,7 +47,7 @@ def transcribe_audio(
         The transcribed text string.
     """
     _exists(file_path)
-    client = StepFunClient(config)
+    client = StudioClient(config)
 
     audio_path = file_path
     tmp = None

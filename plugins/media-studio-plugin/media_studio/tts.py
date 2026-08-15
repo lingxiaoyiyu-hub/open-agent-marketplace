@@ -3,8 +3,8 @@ import re
 import tempfile
 import subprocess
 from typing import List, Optional
-from .client import StepFunClient
-from .config import StepFunConfig
+from .client import StudioClient
+from .config import StudioConfig
 
 CHUNK_LIMIT = 900  # Character limit per chunk for TTS API (max 1000 per doc)
 
@@ -137,16 +137,16 @@ def synthesize_speech(
     volume: Optional[float] = None,
     sample_rate: Optional[int] = None,
     text_normalization: Optional[str] = None,
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> str:
     """
     Synthesize speech from text. Automatically splits long text into chunks and merges audio.
 
     Extra synthesis controls (speed, volume, sample_rate, text_normalization) map
-    directly to the StepFun TTS API. ``instruction`` is only honored by the
+    directly to the Studio TTS API. ``instruction`` is only honored by the
     ``stepaudio-2.5-tts`` model.
     """
-    client = StepFunClient(config)
+    client = StudioClient(config)
     chunks = split_text_into_chunks(text)
 
     if len(chunks) == 1:

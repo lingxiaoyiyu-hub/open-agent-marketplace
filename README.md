@@ -38,7 +38,7 @@ flowchart TD
     end
 
     subgraph Plugins Suite
-        P1["stepfun-plugin\n(StepFun Multimodal AI)"]
+        P1["media-studio-plugin\n(Media Studio)"]
         P2["redteam-hardening-plugin\n(Red/Blue Hook Hardening)"]
         P3["open-reverselab-plugin\n(Reverse Engineering Lab)"]
     end
@@ -55,7 +55,7 @@ flowchart TD
 
 | 插件标识 (Plugin ID) | 显示名称 (Display Name) | 核心技能 (Skills Exposed) | 提供能力 / MCP 工具 | 状态 |
 | :--- | :--- | :--- | :--- | :---: |
-| **`stepfun-plugin`** | StepFun 多模态 AI 套件 | `stepfun` | • 长文本 TTS 语音合成<br>• Zero-Shot 音色克隆与试听<br>• 高清文生图与图像编辑<br>• 长视频理解与结构化分析 | `Active` |
+| **`media-studio-plugin`** | Media Studio 多模态媒体创作套件 | `media-studio` | • TTS 语音合成<br>• 音色克隆<br>• 语音转写 (ASR) 与字幕<br>• 视频混剪/粗剪/转码<br>• 文生图与图像编辑<br>• 视频理解 | `Active` |
 | **`redteam-hardening-plugin`** | 红蓝 Hook 攻防加固套件 | `redteam-hook` | • 软件黑盒二进制分析探针<br>• Hook 攻击 PoC 还原<br>• 蓝队反 Hook / Syscall 加固方案<br>• Bypass 对抗防护报告生成 | `Active` |
 | **`open-reverselab-plugin`** | 逆向工程实验室套件 | `reverselab-pe`<br>`reverselab-apk`<br>`reverselab-ctf` | • Windows PE / ELF 静态与动态调试<br>• Android DEX / JNI / Frida 脱壳分析<br>• CTF 竞赛与 Crackme 自动化解题<br>• 密码学算法提取与 197+ 知识库 | `Active` |
 
@@ -89,16 +89,16 @@ git clone https://github.com/lingxiaoyiyu-hub/open-agent-marketplace.git custom-
 
 为了保障安全性，本仓库所有插件均已进行**脱敏处理**，代码及配置文件中无任何硬编码 API Key。使用特定插件功能前，请在系统本地配置相应的环境变量：
 
-### StepFun 插件环境变量
-在调用 StepFun 语音合成、文生图或视频分析功能前设置：
+### Media Studio 插件环境变量
+在调用 Media Studio 的语音合成、语音转写、字幕、视频剪辑、文生图或视频分析功能前设置：
 
 - **Windows PowerShell**:
   ```powershell
-  $env:STEPFUN_API_KEY="your_actual_stepfun_api_key"
+  $env:STUDIO_API_KEY="your_actual_api_key"
   ```
 - **Linux / macOS (Bash/Zsh)**:
   ```bash
-  export STEPFUN_API_KEY="your_actual_stepfun_api_key"
+  export STUDIO_API_KEY="your_actual_api_key"
   ```
 
 ---

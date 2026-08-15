@@ -1,14 +1,14 @@
 {
   "mcpServers": {
-    "stepfun": {
+    "media-studio": {
       "command": "python",
       "args": [
         "-m",
-        "stepfun.mcp_server"
+        "media_studio.mcp_server"
       ],
       "env": {
-        "STEPFUN_API_KEY": "",
-        "STEPFUN_BASE_URL": "https://api.stepfun.com/v1",
+        "STUDIO_API_KEY": "",
+        "STUDIO_BASE_URL": "https://api.stepfun.com/v1",
         "FFMPEG_PATH": "",
         "FFPROBE_PATH": ""
       }

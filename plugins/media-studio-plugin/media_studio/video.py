@@ -1,11 +1,11 @@
 import os
 from typing import Optional, Dict, Any
-from .client import StepFunClient
-from .config import StepFunConfig
+from .client import StudioClient
+from .config import StudioConfig
 
-def upload_video_file(file_path: str, client: StepFunClient) -> str:
+def upload_video_file(file_path: str, client: StudioClient) -> str:
     """
-    Upload a local video file to StepFun files API.
+    Upload a local video file to Studio files API.
     Returns file_id.
     """
     if not os.path.exists(file_path):
@@ -31,12 +31,12 @@ def understand_video(
     video_input: str,
     prompt: str = "请概括这个视频的主要内容",
     model: str = "step-3.7-flash",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> str:
     """
     Understand and analyze video content from a URL or local file path.
     """
-    client = StepFunClient(config)
+    client = StudioClient(config)
     
     if video_input.startswith("http://") or video_input.startswith("https://"):
         video_target = video_input

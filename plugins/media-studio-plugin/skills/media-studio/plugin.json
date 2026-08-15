@@ -1,0 +1,6 @@
+{
+  "name": "media-studio",
+  "displayName": "[Media Studio] 多模态媒体创作能力",
+  "version": "1.2.0",
+  "description": "供应商无关的多模态媒体创作套件 (TTS、音色克隆、ASR、字幕、媒体剪辑、生图、视频理解)。"
+}

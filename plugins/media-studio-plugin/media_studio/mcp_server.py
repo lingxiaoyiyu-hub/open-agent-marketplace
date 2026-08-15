@@ -12,14 +12,14 @@ from .tts import synthesize_speech
 from .video import understand_video
 from .voice_clone import preview_voice, create_voice, list_system_voices
 
-mcp = FastMCP("stepfun-mcp-server")
+mcp = FastMCP("media-studio-mcp-server")
 
 
 # --------------------------------------------------------------------------
 # Voice (TTS / voice clone / voice list)
 # --------------------------------------------------------------------------
 @mcp.tool()
-def stepfun_tts(
+def voice_tts(
     text: str,
     output_path: str = "speech.mp3",
     voice: str = "cixingnansheng",
@@ -32,13 +32,13 @@ def stepfun_tts(
     text_normalization: Optional[str] = None,
 ) -> str:
     """
-    Synthesize speech (TTS, 配音) from text using StepFun. Long text is auto-split
+    Synthesize speech (TTS, 配音) from text using Studio. Long text is auto-split
     and concatenated seamlessly via ffmpeg.
 
     Args:
         text: Text to synthesize into speech.
         output_path: Target audio output file path.
-        voice: Voice ID (default: cixingnansheng). Use stepfun_list_voices to browse.
+        voice: Voice ID (default: cixingnansheng). Use voice_list to browse.
         instruction: Optional emotion/tone/speed instruction (stepaudio-2.5-tts only).
         model: TTS model (stepaudio-2.5-tts / step-tts-2 / step-tts-mini).
         response_format: Output audio format (mp3, wav, flac, opus, pcm).
@@ -63,9 +63,9 @@ def stepfun_tts(
 
 
 @mcp.tool()
-def stepfun_list_voices(model: str = "step-tts-2") -> str:
+def voice_list(model: str = "step-tts-2") -> str:
     """
-    List official StepFun system voices (voice IDs + descriptions).
+    List official Studio system voices (voice IDs + descriptions).
 
     Args:
         model: Voice list model (currently only "step-tts-2").
@@ -75,7 +75,7 @@ def stepfun_list_voices(model: str = "step-tts-2") -> str:
 
 
 @mcp.tool()
-def stepfun_clone_preview(
+def voice_clone_preview(
     file_path: str,
     ref_text: str,
     sample_text: str,
@@ -106,7 +106,7 @@ def stepfun_clone_preview(
 
 
 @mcp.tool()
-def stepfun_clone_voice(
+def voice_clone_voice(
     file_path: str,
     ref_text: str,
     model: str = "stepaudio-2.5-tts",
@@ -127,7 +127,7 @@ def stepfun_clone_voice(
 # Speech-to-text / subtitles
 # --------------------------------------------------------------------------
 @mcp.tool()
-def stepfun_transcribe(
+def voice_transcribe(
     file_path: str,
     model: str = "stepaudio-2.5-asr",
     hotwords: Optional[List[str]] = None,
@@ -146,7 +146,7 @@ def stepfun_transcribe(
 
 
 @mcp.tool()
-def stepfun_make_srt(
+def subtitle_make(
     text: str,
     output_path: str,
     duration: Optional[float] = None,
@@ -167,7 +167,7 @@ def stepfun_make_srt(
 
 
 @mcp.tool()
-def stepfun_auto_subtitle(
+def subtitle_auto(
     video_path: str,
     output_path: str,
     model: str = "stepaudio-2.5-asr",
@@ -199,7 +199,7 @@ def stepfun_auto_subtitle(
 # Image generation / edit
 # --------------------------------------------------------------------------
 @mcp.tool()
-def stepfun_image_generate(
+def image_generate(
     prompt: str,
     output_path: str = "generated.png",
     model: str = "step-image-edit-2",
@@ -209,7 +209,7 @@ def stepfun_image_generate(
     text_mode: bool = False,
 ) -> str:
     """
-    Generate an image from a text prompt using StepFun image models (文生图).
+    Generate an image from a text prompt using Studio image models (文生图).
 
     Args:
         prompt: Image generation prompt (<=512 characters).
@@ -233,7 +233,7 @@ def stepfun_image_generate(
 
 
 @mcp.tool()
-def stepfun_image_edit(
+def image_edit(
     image_path: str,
     prompt: str,
     output_path: str = "edited.png",
@@ -244,7 +244,7 @@ def stepfun_image_edit(
     text_mode: bool = False,
 ) -> str:
     """
-    Edit an existing image with a text prompt using StepFun image edit models.
+    Edit an existing image with a text prompt using Studio image edit models.
 
     Args:
         image_path: Path to input image to edit.
@@ -270,7 +270,7 @@ def stepfun_image_edit(
 
 
 @mcp.tool()
-def stepfun_video_understand(
+def video_understand(
     video_input: str,
     prompt: str = "请概括这个视频的主要内容",
     model: str = "step-3.7-flash",

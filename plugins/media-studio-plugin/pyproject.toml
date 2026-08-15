@@ -3,9 +3,9 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "stepfun-tools"
-version = "1.1.0"
-description = "StepFun (阶跃星辰) Audio, Image, Video & Media Editing Tool Suite (TTS/ASR/Subtitle/Mixcut) with MCP Server"
+name = "media-studio-tools"
+version = "1.2.0"
+description = "Media Studio — vendor-neutral multimodal media suite (TTS/ASR/Subtitle/Mixcut/Image/Video) with MCP Server"
 readme = "README.md"
 authors = [{ name = "Antigravity Agent" }]
 license = { text = "MIT" }
@@ -14,8 +14,8 @@ dependencies = [
 ]
 
 [project.scripts]
-stepfun = "stepfun.cli:main"
-stepfun-mcp = "stepfun.mcp_server:main"
+media-studio = "media_studio.cli:main"
+media-studio-mcp = "media_studio.mcp_server:main"
 
 [tool.setuptools.packages.find]
 where = ["."]

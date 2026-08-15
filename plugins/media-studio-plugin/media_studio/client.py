@@ -3,11 +3,11 @@ import urllib.request
 import urllib.error
 import uuid
 from typing import Dict, Any, Union
-from .config import StepFunConfig
+from .config import StudioConfig
 
-class StepFunClient:
-    def __init__(self, config: StepFunConfig = None):
-        self.config = config or StepFunConfig()
+class StudioClient:
+    def __init__(self, config: StudioConfig = None):
+        self.config = config or StudioConfig()
 
     def get_json(self, endpoint: str, params: Dict[str, Any] = None) -> Dict[str, Any]:
         """Perform a GET request and parse the JSON response."""
@@ -23,9 +23,9 @@ class StepFunClient:
                 return json.loads(content.decode("utf-8"))
         except urllib.error.HTTPError as e:
             err_body = e.read().decode("utf-8", errors="ignore")
-            raise RuntimeError(f"StepFun API Request Failed [{e.code}]: {err_body}") from e
+            raise RuntimeError(f"Studio API Request Failed [{e.code}]: {err_body}") from e
         except Exception as e:
-            raise RuntimeError(f"StepFun API Request Error: {str(e)}") from e
+            raise RuntimeError(f"Studio API Request Error: {str(e)}") from e
 
     def post_json(self, endpoint: str, data: Dict[str, Any], raw_response: bool = False) -> Union[Dict[str, Any], bytes]:
         url = f"{self.config.base_url}{endpoint}"
@@ -46,9 +46,9 @@ class StepFunClient:
                     return content
         except urllib.error.HTTPError as e:
             err_body = e.read().decode("utf-8", errors="ignore")
-            raise RuntimeError(f"StepFun API Request Failed [{e.code}]: {err_body}") from e
+            raise RuntimeError(f"Studio API Request Failed [{e.code}]: {err_body}") from e
         except Exception as e:
-            raise RuntimeError(f"StepFun API Request Error: {str(e)}") from e
+            raise RuntimeError(f"Studio API Request Error: {str(e)}") from e
 
     def post_multipart(self, endpoint: str, fields: Dict[str, str], files: Dict[str, tuple]) -> Dict[str, Any]:
         """
@@ -86,6 +86,6 @@ class StepFunClient:
                 return json.loads(content.decode("utf-8"))
         except urllib.error.HTTPError as e:
             err_body = e.read().decode("utf-8", errors="ignore")
-            raise RuntimeError(f"StepFun API Multipart Request Failed [{e.code}]: {err_body}") from e
+            raise RuntimeError(f"Studio API Multipart Request Failed [{e.code}]: {err_body}") from e
         except Exception as e:
-            raise RuntimeError(f"StepFun API Multipart Error: {str(e)}") from e
+            raise RuntimeError(f"Studio API Multipart Error: {str(e)}") from e

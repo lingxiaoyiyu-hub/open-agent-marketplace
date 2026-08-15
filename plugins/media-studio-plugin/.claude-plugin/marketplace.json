@@ -1,0 +1,15 @@
+{
+  "name": "media-studio-plugin",
+  "owner": "Antigravity AI Team",
+  "description": "Media Studio 多模态媒体创作套件",
+  "plugins": [
+    {
+      "name": "media-studio",
+      "displayName": "[Media Studio] 多模态媒体创作能力",
+      "description": "供应商无关的多模态媒体创作套件 (TTS、音色克隆、ASR、字幕、媒体剪辑、生图、视频理解)。",
+      "path": "./skills/media-studio",
+      "source": "./skills/media-studio",
+      "version": "1.2.0"
+    }
+  ]
+}

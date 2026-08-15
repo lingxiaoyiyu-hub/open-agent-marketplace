@@ -17,8 +17,8 @@ def _add_common(p, *names):
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="stepfun",
-        description="StepFun (阶跃星辰) Audio/Image/Video/Media CLI Tool",
+        prog="media-studio",
+        description="Media Studio Audio/Image/Video/Media CLI Tool",
     )
     subparsers = parser.add_subparsers(dest="command", help="Available commands")
 

@@ -5,18 +5,18 @@ import unittest
 # Add parent directory to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from stepfun.config import StepFunConfig
-from stepfun.client import StepFunClient
-from stepfun.tts import split_text_into_chunks, synthesize_speech
-from stepfun.image import generate_image
-from stepfun.video import understand_video
+from media_studio.config import StudioConfig
+from media_studio.client import StudioClient
+from media_studio.tts import split_text_into_chunks, synthesize_speech
+from media_studio.image import generate_image
+from media_studio.video import understand_video
 
-class TestStepFunTools(unittest.TestCase):
+class TestMediaStudioTools(unittest.TestCase):
 
     def test_config(self):
-        cfg = StepFunConfig()
+        cfg = StudioConfig()
         self.assertTrue(cfg.api_key)
-        self.assertEqual(cfg.base_url, "https://api.stepfun.com/step_plan/v1")
+        self.assertEqual(cfg.base_url, "https://api.stepfun.com/v1")
 
     def test_chunking(self):
         short_text = "这是一段短文本。"
@@ -32,7 +32,7 @@ class TestStepFunTools(unittest.TestCase):
     def test_short_tts(self):
         out_path = os.path.join(os.path.dirname(__file__), "test_short.mp3")
         res_file = synthesize_speech(
-            text="阶跃星辰语音合成测试",
+            text="媒体创作语音合成测试",
             output_path=out_path,
             instruction="语气温柔"
         )
@@ -42,7 +42,7 @@ class TestStepFunTools(unittest.TestCase):
     def test_long_tts(self):
         out_path = os.path.join(os.path.dirname(__file__), "test_long.mp3")
         # Create long text > 1000 chars
-        para = "阶跃星辰拥有先进的大模型与多模态技术。这一段用于测试长文本自动分段合成与音频无缝拼接功能。"
+        para = "这是一段用于测试长文本自动分段合成的文案。这一段用于测试长文本自动分段合成与音频无缝拼接功能。"
         long_text = (para + "\n") * 12  # ~1100 chars
         
         res_file = synthesize_speech(

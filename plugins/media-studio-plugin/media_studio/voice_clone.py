@@ -1,12 +1,12 @@
 import os
 import base64
 from typing import Optional, Dict, Any
-from .client import StepFunClient
-from .config import StepFunConfig
+from .client import StudioClient
+from .config import StudioConfig
 
-def upload_voice_file(file_path: str, client: StepFunClient) -> str:
+def upload_voice_file(file_path: str, client: StudioClient) -> str:
     """
-    Upload a 5~10 second audio file to StepFun files API with purpose=storage.
+    Upload a 5~10 second audio file to Studio files API with purpose=storage.
     Returns the file_id.
     """
     if not os.path.exists(file_path):
@@ -36,13 +36,13 @@ def preview_voice(
     output_path: str = "preview.wav",
     instruction: Optional[str] = None,
     model: str = "stepaudio-2.5-tts",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> str:
     """
     Preview cloned voice without creating a permanent voice ID.
     Decodes the returned base64 wav audio into output_path.
     """
-    client = StepFunClient(config)
+    client = StudioClient(config)
     file_id = upload_voice_file(file_path, client)
     
     payload = {
@@ -75,13 +75,13 @@ def create_voice(
     file_path: str,
     ref_text: str,
     model: str = "stepaudio-2.5-tts",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> Dict[str, Any]:
     """
     Create a permanent cloned voice.
     Returns response dict containing voice_id / id.
     """
-    client = StepFunClient(config)
+    client = StudioClient(config)
     file_id = upload_voice_file(file_path, client)
     
     payload = {
@@ -96,11 +96,11 @@ def create_voice(
 
 def list_system_voices(
     model: str = "step-tts-2",
-    config: Optional[StepFunConfig] = None
+    config: Optional[StudioConfig] = None
 ) -> Dict[str, Any]:
-    """List official StepFun system voices.
+    """List official Studio system voices.
 
     Returns the raw response containing ``voices`` (a list of voice ID strings)
     and ``voices-details`` (a dict keyed by voice ID with name/description)."""
-    client = StepFunClient(config)
+    client = StudioClient(config)
     return client.get_json("/audio/system_voices", {"model": model})
