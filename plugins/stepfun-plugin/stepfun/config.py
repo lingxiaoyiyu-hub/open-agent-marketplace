@@ -1,7 +1,7 @@
 import os
 
 DEFAULT_API_KEY = os.getenv("STEPFUN_API_KEY", "")
-DEFAULT_BASE_URL = os.getenv("STEPFUN_BASE_URL", "https://api.stepfun.com/step_plan/v1")
+DEFAULT_BASE_URL = os.getenv("STEPFUN_BASE_URL", "https://api.stepfun.com/v1")
 
 class StepFunConfig:
     def __init__(self, api_key: str = None, base_url: str = None):

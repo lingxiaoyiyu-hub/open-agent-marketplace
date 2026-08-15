@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "stepfun-tools"
-version = "0.1.0"
-description = "StepFun (阶跃星辰) Audio, Image and Video Tool Suite & MCP Server"
+version = "1.1.0"
+description = "StepFun (阶跃星辰) Audio, Image, Video & Media Editing Tool Suite (TTS/ASR/Subtitle/Mixcut) with MCP Server"
 readme = "README.md"
 authors = [{ name = "Antigravity Agent" }]
 license = { text = "MIT" }

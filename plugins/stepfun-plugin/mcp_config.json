@@ -8,7 +8,9 @@
       ],
       "env": {
         "STEPFUN_API_KEY": "",
-        "STEPFUN_BASE_URL": "https://api.stepfun.com/step_plan/v1"
+        "STEPFUN_BASE_URL": "https://api.stepfun.com/v1",
+        "FFMPEG_PATH": "",
+        "FFPROBE_PATH": ""
       }
     }
   }

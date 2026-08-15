@@ -96,6 +96,36 @@ def merge_audio_files(input_files: List[str], output_file: str):
             except Exception:
                 pass
 
+def _build_payload(
+    text: str,
+    model: str,
+    voice: str,
+    response_format: str,
+    instruction: Optional[str],
+    speed: Optional[float],
+    volume: Optional[float],
+    sample_rate: Optional[int],
+    text_normalization: Optional[str],
+) -> dict:
+    payload = {
+        "model": model,
+        "input": text,
+        "voice": voice,
+        "response_format": response_format,
+    }
+    if instruction and model == "stepaudio-2.5-tts":
+        payload["instruction"] = instruction
+    if speed is not None:
+        payload["speed"] = speed
+    if volume is not None:
+        payload["volume"] = volume
+    if sample_rate is not None:
+        payload["sample_rate"] = sample_rate
+    if text_normalization is not None:
+        payload["text_normalization"] = text_normalization
+    return payload
+
+
 def synthesize_speech(
     text: str,
     output_path: str = "output.mp3",
@@ -103,60 +133,58 @@ def synthesize_speech(
     instruction: Optional[str] = None,
     model: str = "stepaudio-2.5-tts",
     response_format: str = "mp3",
+    speed: Optional[float] = None,
+    volume: Optional[float] = None,
+    sample_rate: Optional[int] = None,
+    text_normalization: Optional[str] = None,
     config: Optional[StepFunConfig] = None
 ) -> str:
     """
     Synthesize speech from text. Automatically splits long text into chunks and merges audio.
+
+    Extra synthesis controls (speed, volume, sample_rate, text_normalization) map
+    directly to the StepFun TTS API. ``instruction`` is only honored by the
+    ``stepaudio-2.5-tts`` model.
     """
     client = StepFunClient(config)
     chunks = split_text_into_chunks(text)
-    
+
     if len(chunks) == 1:
-        payload = {
-            "model": model,
-            "input": chunks[0],
-            "voice": voice,
-            "response_format": response_format
-        }
-        if instruction and model == "stepaudio-2.5-tts":
-            payload["instruction"] = instruction
-            
+        payload = _build_payload(
+            chunks[0], model, voice, response_format, instruction,
+            speed, volume, sample_rate, text_normalization,
+        )
         audio_bytes = client.post_json("/audio/speech", payload, raw_response=True)
-        
+
         # Ensure target directory exists
         out_dir = os.path.dirname(os.path.abspath(output_path))
         if out_dir and not os.path.exists(out_dir):
             os.makedirs(out_dir, exist_ok=True)
-            
+
         with open(output_path, "wb") as f:
             f.write(audio_bytes)
         return os.path.abspath(output_path)
-    
+
     # Multi-chunk processing
     temp_files = []
     try:
         for idx, chunk in enumerate(chunks):
-            payload = {
-                "model": model,
-                "input": chunk,
-                "voice": voice,
-                "response_format": response_format
-            }
-            if instruction and model == "stepaudio-2.5-tts":
-                payload["instruction"] = instruction
-                
+            payload = _build_payload(
+                chunk, model, voice, response_format, instruction,
+                speed, volume, sample_rate, text_normalization,
+            )
             audio_bytes = client.post_json("/audio/speech", payload, raw_response=True)
-            
+
             tmp_fd, tmp_path = tempfile.mkstemp(suffix=f"_{idx}.{response_format}")
             os.close(tmp_fd)
             with open(tmp_path, "wb") as f:
                 f.write(audio_bytes)
             temp_files.append(tmp_path)
-            
+
         out_dir = os.path.dirname(os.path.abspath(output_path))
         if out_dir and not os.path.exists(out_dir):
             os.makedirs(out_dir, exist_ok=True)
-            
+
         merge_audio_files(temp_files, output_path)
         return os.path.abspath(output_path)
     finally:

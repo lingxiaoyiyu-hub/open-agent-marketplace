@@ -9,6 +9,24 @@ class StepFunClient:
     def __init__(self, config: StepFunConfig = None):
         self.config = config or StepFunConfig()
 
+    def get_json(self, endpoint: str, params: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Perform a GET request and parse the JSON response."""
+        import urllib.parse
+        url = f"{self.config.base_url}{endpoint}"
+        if params:
+            url += "?" + urllib.parse.urlencode(params)
+        headers = self.config.headers
+        req = urllib.request.Request(url, headers=headers, method="GET")
+        try:
+            with urllib.request.urlopen(req) as resp:
+                content = resp.read()
+                return json.loads(content.decode("utf-8"))
+        except urllib.error.HTTPError as e:
+            err_body = e.read().decode("utf-8", errors="ignore")
+            raise RuntimeError(f"StepFun API Request Failed [{e.code}]: {err_body}") from e
+        except Exception as e:
+            raise RuntimeError(f"StepFun API Request Error: {str(e)}") from e
+
     def post_json(self, endpoint: str, data: Dict[str, Any], raw_response: bool = False) -> Union[Dict[str, Any], bytes]:
         url = f"{self.config.base_url}{endpoint}"
         payload = json.dumps(data, ensure_ascii=False).encode("utf-8")

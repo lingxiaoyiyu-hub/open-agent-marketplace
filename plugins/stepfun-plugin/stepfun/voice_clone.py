@@ -92,3 +92,15 @@ def create_voice(
     
     res = client.post_json("/audio/voices", payload)
     return res
+
+
+def list_system_voices(
+    model: str = "step-tts-2",
+    config: Optional[StepFunConfig] = None
+) -> Dict[str, Any]:
+    """List official StepFun system voices.
+
+    Returns the raw response containing ``voices`` (a list of voice ID strings)
+    and ``voices-details`` (a dict keyed by voice ID with name/description)."""
+    client = StepFunClient(config)
+    return client.get_json("/audio/system_voices", {"model": model})
