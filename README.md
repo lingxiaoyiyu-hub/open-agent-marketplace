@@ -17,7 +17,7 @@
 
 ## 📖 简介 / Introduction
 
-**Open Agent Marketplace** 是专为各类 **AI Agent 框架** 与 **MCP（Model Context Protocol）客户端** 打造的开放型扩展插件市场集中库。本项目汇集了多模态 AI、自媒体全网爆文挖掘、网络安全与红蓝攻防加固、二进制与移动端逆向工程等领域的多款 Agent 原生扩展套件。
+**Open Agent Marketplace** 是专为各类 **AI Agent 框架** 与 **MCP（Model Context Protocol）客户端** 打造的开放型扩展插件市场集中库。本项目汇集了多模态 AI、自媒体中文写作去 AI 味、自媒体全网爆文挖掘、网络安全与红蓝攻防加固、二进制与移动端逆向工程等领域的多款 Agent 原生扩展套件。
 
 无论是 IDE 插件界面、命令行 Agent 还是自定义 LLM 工作流，均可通过本仓库订阅并动态载入 **Skills（技能）**、**MCP Servers（模型上下文协议服务）** 及 **Rules（规则范式）**。
 
@@ -42,12 +42,13 @@ flowchart TD
         P2["media-crawler-plugin\n(全网自媒体爆文与数据采集)"]
         P3["redteam-hardening-plugin\n(红蓝 Hook 攻防加固)"]
         P4["open-reverselab-plugin\n(逆向工程实验室)"]
+        P5["selfmedia-writing-plugin\n(自媒体写作去 AI 味)"]
     end
 
     MarketplaceUI -->|1. Subscribe URL| Repo
     Repo -->|2. Discover Plugins| Manifest
-    Manifest -->|3. Auto Load| P1 & P2 & P3 & P4
-    P1 & P2 & P3 & P4 -->|4. Register Skills & MCP Tools| Agent
+    Manifest -->|3. Auto Load| P1 & P2 & P3 & P4 & P5
+    P1 & P2 & P3 & P4 & P5 -->|4. Register Skills & MCP Tools| Agent
 ```
 
 ---
@@ -60,6 +61,7 @@ flowchart TD
 | **`media-studio-plugin`** | Media Studio 多模态媒体创作套件 | `media-studio` | • TTS 语音合成<br>• 音色克隆<br>• 语音转写 (ASR) 与字幕<br>• 视频混剪/粗剪/转码<br>• 文生图与图像编辑<br>• 视频理解 | `Active` |
 | **`redteam-hardening-plugin`** | 红蓝 Hook 攻防加固套件 | `redteam-hook` | • 软件黑盒二进制分析探针<br>• Hook 攻击 PoC 还原<br>• 蓝队反 Hook / Syscall 加固方案<br>• Bypass 对抗防护报告生成 | `Active` |
 | **`open-reverselab-plugin`** | 逆向工程实验室套件 | `reverselab-pe`<br>`reverselab-apk`<br>`reverselab-ctf` | • Windows PE / ELF 静态与动态调试<br>• Android DEX / JNI / Frida 脱壳分析<br>• CTF 竞赛与 Crackme 自动化解题<br>• 密码学算法提取与 197+ 知识库 | `Active` |
+| **`selfmedia-writing-plugin`** | SelfMedia 自媒体中文写作去 AI 味套件 | `remove-ai-flavor`<br>`rewrite-paraphrase` | • 去 AI 味:识别并改写模板腔、翻译腔、二元对比壳、序列壳、助手套话、假互动结尾<br>• 二创改写降重:24 类 AI 痕迹评分 + 轻/中/深三级改写强度<br>• 适配公众号 / 头条号 / 百家号 / 小红书<br>• 零依赖、离线可用 | `Active` |
 
 ---
 
