@@ -1,16 +1,7 @@
 {
-  "manifest_version": "1.0.0",
   "name": "media-crawler-plugin",
-  "display_name": "MediaCrawler All-in-One Plugin",
+  "displayName": "[Media Crawler] 全网自媒体爆文与多平台数据采集套件",
   "version": "1.0.0",
-  "description": "全网自媒体爆文与多平台数据采集插件 | Multi-platform Social Media & News Viral Miner (Toutiao, Xiaohongshu, Zhihu, Weibo, Douyin, Bilibili)",
-  "author": "lingxiaoyiyu-hub / Antigravity AI Team",
-  "license": "MIT",
-  "entry": "mcp_server/server.py",
-  "mcp_config": "mcp_config.json",
-  "skills": [
-    "skills/media-viral-hunter",
-    "skills/viral-content-creator",
-    "skills/creator-benchmark"
-  ]
+  "description": "全网自媒体爆文与多平台数据采集插件 | Multi-platform Social Media & News Viral Miner (今日头条/小红书/知乎/微博/抖音/B站/快手)",
+  "publisher": "lingxiaoyiyu-hub / Antigravity AI Team"
 }

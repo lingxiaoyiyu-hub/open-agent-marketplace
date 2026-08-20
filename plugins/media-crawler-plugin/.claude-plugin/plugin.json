@@ -1,0 +1,5 @@
+{
+  "name": "media-crawler-plugin",
+  "version": "1.0.0",
+  "description": "全网自媒体爆文与多平台数据采集插件 (今日头条/小红书/知乎/微博/抖音/B站/快手)。"
+}
