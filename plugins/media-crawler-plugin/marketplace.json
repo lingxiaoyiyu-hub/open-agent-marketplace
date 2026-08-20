@@ -1,0 +1,31 @@
+{
+  "name": "media-crawler-plugin",
+  "owner": "lingxiaoyiyu-hub / Antigravity AI Team",
+  "description": "Multi-platform Social Media & News Viral Miner Suite | 全网自媒体爆文挖掘、多平台热点追踪与爆款拆解套件",
+  "plugins": [
+    {
+      "name": "media-viral-hunter",
+      "displayName": "[Viral Hunter] 全网跨平台热点与爆文雷达",
+      "description": "实时获取今日头条、微博、知乎、抖音、B站、百度等多平台实时热搜与垂直频道高赞爆文",
+      "path": "./skills/media-viral-hunter",
+      "source": "./skills/media-viral-hunter",
+      "version": "1.0.0"
+    },
+    {
+      "name": "viral-content-creator",
+      "displayName": "[Viral Creator] 爆文拆解与矩阵重构改写",
+      "description": "基于采集到的爆文正文进行结构拆解、黄金开头提取与多平台矩阵式无AI味创作",
+      "path": "./skills/viral-content-creator",
+      "source": "./skills/viral-content-creator",
+      "version": "1.0.0"
+    },
+    {
+      "name": "creator-benchmark",
+      "displayName": "[Creator Benchmark] 竞品大V对标分析",
+      "description": "深度分析对标账号历史高赞爆款作品分布、发文节奏与受众互动共鸣点",
+      "path": "./skills/creator-benchmark",
+      "source": "./skills/creator-benchmark",
+      "version": "1.0.0"
+    }
+  ]
+}

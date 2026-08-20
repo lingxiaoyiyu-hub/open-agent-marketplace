@@ -2,7 +2,7 @@
   "name": "open-agent-marketplace",
   "owner": "lingxiaoyiyu-hub",
   "description": "通用 AI Agent & MCP 扩展插件市场集中库",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "plugins": [
     {
       "name": "media-studio-plugin",
@@ -26,6 +26,14 @@
       "description": "Agent-native Reverse Engineering Suite | Agent-native 逆向工程实验室插件（包含 PE 逆向、APK 分析、CTF 答题与密码学分析）",
       "path": "./plugins/open-reverselab-plugin",
       "source": "./plugins/open-reverselab-plugin",
+      "version": "1.0.0"
+    },
+    {
+      "name": "media-crawler-plugin",
+      "displayName": "[Media Crawler] 全网自媒体爆文与多平台数据采集套件",
+      "description": "Multi-platform Social Media & News Viral Miner Suite | 全网自媒体爆文挖掘、多平台热点追踪与爆款拆解套件 (今日头条/小红书/知乎/微博/抖音/B站/快手)",
+      "path": "./plugins/media-crawler-plugin",
+      "source": "./plugins/media-crawler-plugin",
       "version": "1.0.0"
     }
   ]

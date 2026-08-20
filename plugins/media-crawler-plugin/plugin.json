@@ -1,0 +1,21 @@
+{
+  "name": "media-crawler-plugin",
+  "version": "1.0.0",
+  "description": "Multi-platform Social Media & News Viral Miner Plugin | 全网自媒体爆文与多平台数据采集插件 (今日头条/小红书/知乎/微博/抖音/B站/快手)",
+  "author": {
+    "name": "lingxiaoyiyu-hub / Antigravity AI Team"
+  },
+  "license": "MIT",
+  "keywords": [
+    "crawler",
+    "media-crawler",
+    "toutiao",
+    "xiaohongshu",
+    "zhihu",
+    "weibo",
+    "douyin",
+    "bilibili",
+    "viral-miner",
+    "mcp"
+  ]
+}

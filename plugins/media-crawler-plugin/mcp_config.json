@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "media-crawler": {
+      "command": "python",
+      "args": [
+        "-u",
+        "mcp_server/server.py"
+      ],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    }
+  }
+}
