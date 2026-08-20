@@ -1,0 +1,6 @@
+{
+  "name": "remove-ai-flavor",
+  "displayName": "[SelfMedia] 去 AI 味",
+  "version": "1.0.0",
+  "description": "去除中文文本 AI 味道的自媒体润色 skill:识别并改写模板腔、翻译腔、二元对比壳、序列壳、本质宣称、助手套话与假互动结尾,适用于公众号/头条号/百家号/小红书等稿件。"
+}

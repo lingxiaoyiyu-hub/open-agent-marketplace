@@ -1,0 +1,6 @@
+{
+  "name": "rewrite-paraphrase",
+  "displayName": "[SelfMedia] 二创改写降重",
+  "version": "1.0.0",
+  "description": "中文文本二创改写与降重 skill:24 类 AI 痕迹评分 + 轻/中/深三级改写强度,把已有内容改写成新的原创表达,适用于公众号/头条号/百家号二创与论文降重。"
+}

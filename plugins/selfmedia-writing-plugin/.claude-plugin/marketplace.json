@@ -1,0 +1,23 @@
+{
+  "name": "selfmedia-writing-plugin",
+  "owner": "lingxiaoyiyu",
+  "description": "自媒体中文写作去 AI 味与二创改写套件",
+  "plugins": [
+    {
+      "name": "remove-ai-flavor",
+      "displayName": "[SelfMedia] 去 AI 味",
+      "description": "去除中文文本 AI 味道的自媒体润色 skill,适用于公众号/头条号/百家号/小红书等稿件。",
+      "path": "./skills/remove-ai-flavor",
+      "source": "./skills/remove-ai-flavor",
+      "version": "1.0.0"
+    },
+    {
+      "name": "rewrite-paraphrase",
+      "displayName": "[SelfMedia] 二创改写降重",
+      "description": "中文文本二创改写与降重 skill,适用于公众号/头条号/百家号二创与论文降重。",
+      "path": "./skills/rewrite-paraphrase",
+      "source": "./skills/rewrite-paraphrase",
+      "version": "1.0.0"
+    }
+  ]
+}

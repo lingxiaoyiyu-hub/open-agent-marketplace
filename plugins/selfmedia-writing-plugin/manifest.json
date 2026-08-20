@@ -1,0 +1,7 @@
+{
+  "name": "selfmedia-writing-plugin",
+  "displayName": "[SelfMedia Writing] 自媒体中文写作去 AI 味套件",
+  "version": "1.0.0",
+  "description": "自媒体中文写作去 AI 味与二创改写套件:去除 AI 痕迹(模板腔、翻译腔、句壳、套话)与二创降重改写,适配公众号、头条号、百家号、小红书等平台。",
+  "publisher": "lingxiaoyiyu"
+}

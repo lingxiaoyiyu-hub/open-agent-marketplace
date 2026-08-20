@@ -2,7 +2,7 @@
   "name": "open-agent-marketplace",
   "owner": "lingxiaoyiyu-hub",
   "description": "通用 AI Agent & MCP 扩展插件市场集中库",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "plugins": [
     {
       "name": "media-studio-plugin",
@@ -34,6 +34,14 @@
       "description": "Multi-platform Social Media & News Viral Miner Suite | 全网自媒体爆文挖掘、多平台热点追踪与爆款拆解套件 (今日头条/小红书/知乎/微博/抖音/B站/快手)",
       "path": "./plugins/media-crawler-plugin",
       "source": "./plugins/media-crawler-plugin",
+      "version": "1.0.0"
+    },
+    {
+      "name": "selfmedia-writing-plugin",
+      "displayName": "[SelfMedia Writing] 自媒体中文写作去 AI 味套件",
+      "description": "自媒体中文写作去 AI 味与二创改写套件：去除 AI 痕迹（模板腔、翻译腔、句壳、套话）与二创降重改写，适配公众号、头条号、百家号、小红书等平台",
+      "path": "./plugins/selfmedia-writing-plugin",
+      "source": "./plugins/selfmedia-writing-plugin",
       "version": "1.0.0"
     }
   ]
