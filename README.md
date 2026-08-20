@@ -17,7 +17,7 @@
 
 ## 📖 简介 / Introduction
 
-**Open Agent Marketplace** 是专为各类 **AI Agent 框架** 与 **MCP（Model Context Protocol）客户端** 打造的开放型扩展插件市场集中库。本项目汇集了多模态 AI、网络安全与红蓝攻防加固、二进制与移动端逆向工程等领域的多款 Agent 原生扩展套件。
+**Open Agent Marketplace** 是专为各类 **AI Agent 框架** 与 **MCP（Model Context Protocol）客户端** 打造的开放型扩展插件市场集中库。本项目汇集了多模态 AI、自媒体全网爆文挖掘、网络安全与红蓝攻防加固、二进制与移动端逆向工程等领域的多款 Agent 原生扩展套件。
 
 无论是 IDE 插件界面、命令行 Agent 还是自定义 LLM 工作流，均可通过本仓库订阅并动态载入 **Skills（技能）**、**MCP Servers（模型上下文协议服务）** 及 **Rules（规则范式）**。
 
@@ -38,15 +38,16 @@ flowchart TD
     end
 
     subgraph Plugins Suite
-        P1["media-studio-plugin\n(Media Studio)"]
-        P2["redteam-hardening-plugin\n(Red/Blue Hook Hardening)"]
-        P3["open-reverselab-plugin\n(Reverse Engineering Lab)"]
+        P1["media-studio-plugin\n(Media Studio 多模态创作)"]
+        P2["media-crawler-plugin\n(全网自媒体爆文与数据采集)"]
+        P3["redteam-hardening-plugin\n(红蓝 Hook 攻防加固)"]
+        P4["open-reverselab-plugin\n(逆向工程实验室)"]
     end
 
     MarketplaceUI -->|1. Subscribe URL| Repo
     Repo -->|2. Discover Plugins| Manifest
-    Manifest -->|3. Auto Load| P1 & P2 & P3
-    P1 & P2 & P3 -->|4. Register Skills & MCP Tools| Agent
+    Manifest -->|3. Auto Load| P1 & P2 & P3 & P4
+    P1 & P2 & P3 & P4 -->|4. Register Skills & MCP Tools| Agent
 ```
 
 ---
@@ -55,6 +56,7 @@ flowchart TD
 
 | 插件标识 (Plugin ID) | 显示名称 (Display Name) | 核心技能 (Skills Exposed) | 提供能力 / MCP 工具 | 状态 |
 | :--- | :--- | :--- | :--- | :---: |
+| **`media-crawler-plugin`** | Media Crawler 全网自媒体爆文挖掘与多平台采集套件 | `media-viral-hunter`<br>`viral-content-creator`<br>`creator-benchmark` | • 今日头条/微博/知乎/B站/抖音/小红书实时热搜雷达<br>• 垂直赛道 10w+ 爆文与评论区数据采集<br>• 黄金 3 秒开头与情绪主线结构拆解 (AIDA+)<br>• 科学爆款综合指数 (HeatScore) 算法评估 | `Active` |
 | **`media-studio-plugin`** | Media Studio 多模态媒体创作套件 | `media-studio` | • TTS 语音合成<br>• 音色克隆<br>• 语音转写 (ASR) 与字幕<br>• 视频混剪/粗剪/转码<br>• 文生图与图像编辑<br>• 视频理解 | `Active` |
 | **`redteam-hardening-plugin`** | 红蓝 Hook 攻防加固套件 | `redteam-hook` | • 软件黑盒二进制分析探针<br>• Hook 攻击 PoC 还原<br>• 蓝队反 Hook / Syscall 加固方案<br>• Bypass 对抗防护报告生成 | `Active` |
 | **`open-reverselab-plugin`** | 逆向工程实验室套件 | `reverselab-pe`<br>`reverselab-apk`<br>`reverselab-ctf` | • Windows PE / ELF 静态与动态调试<br>• Android DEX / JNI / Frida 脱壳分析<br>• CTF 竞赛与 Crackme 自动化解题<br>• 密码学算法提取与 197+ 知识库 | `Active` |
@@ -85,11 +87,17 @@ git clone https://github.com/lingxiaoyiyu-hub/open-agent-marketplace.git custom-
 
 ---
 
-## ⚙️ 环境变量与密钥配置 / Environment Setup
+## ⚙️ 环境变量与可选配置 / Environment Setup
 
-为了保障安全性，本仓库所有插件均已进行**脱敏处理**，代码及配置文件中无任何硬编码 API Key。使用特定插件功能前，请在系统本地配置相应的环境变量：
+为了保障安全性，本仓库所有插件均已进行**脱敏处理**，代码及配置文件中无任何硬编码 API Key。
 
-### Media Studio 插件环境变量
+### 1. Media Crawler 插件
+无需额外 API Key 即可开箱使用全网热搜与免鉴权采集能力。如需启用深层页面渲染，可按需安装 Playwright：
+```bash
+pip install playwright && playwright install chromium
+```
+
+### 2. Media Studio 插件环境变量
 在调用 Media Studio 的语音合成、语音转写、字幕、视频剪辑、文生图或视频分析功能前设置：
 
 - **Windows PowerShell**:
